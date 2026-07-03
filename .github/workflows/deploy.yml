@@ -42,7 +42,6 @@ jobs:
           cp -r \
             index.html \
             404.html \
-            CNAME \
             about \
             contact \
             css \
