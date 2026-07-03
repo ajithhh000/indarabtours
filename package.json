@@ -1,0 +1,13 @@
+{
+  "name": "indarabtours",
+  "version": "1.0.0",
+  "private": true,
+  "description": "IND ARAB TOURS AND TRAVELS — UAE-based travel agency marketing site",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./css/tailwind.css -o ./css/main.css --minify",
+    "dev:css": "npx tailwindcss -i ./css/tailwind.css -o ./css/main.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

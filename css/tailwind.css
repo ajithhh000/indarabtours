@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base resets ───────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #1F2A33;
+    background-color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* ── Button / CTA classes ──────────────────────────────── */
+@layer components {
+  .btn {
+    @apply inline-block font-semibold rounded-lg
+           px-6 py-3 text-sm uppercase tracking-wider
+           transition-all duration-200 ease-in-out
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark
+           focus:ring-primary;
+  }
+  .btn-accent {
+    @apply bg-accent hover:brightness-110
+           focus:ring-accent;
+    color: #013C54;
+  }
+  .btn-outline {
+    @apply border-2 border-primary text-primary
+           hover:bg-primary hover:text-white
+           focus:ring-primary;
+  }
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 md:py-20;
+  }
+  .container-main {
+    @apply max-w-7xl mx-auto;
+  }
+  .card-img-fallback {
+    @apply bg-surface flex items-center justify-center;
+    min-height: 200px;
+  }
+}
+
+/* ── Shared page hero (subpages) ───────────────────────── */
+@layer components {
+  .page-hero {
+    @apply relative w-full overflow-hidden flex items-center justify-center
+           h-[480px] md:h-[560px] lg:h-[640px];
+  }
+  .page-hero-bg {
+    @apply absolute inset-0 w-full h-full object-cover;
+  }
+  .page-hero-overlay {
+    @apply absolute inset-0 bg-black/50 z-10;
+  }
+  .page-hero-content {
+    @apply relative z-20 w-full px-4 sm:px-6 lg:px-8 text-center;
+  }
+  .page-hero-title {
+    @apply font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4 drop-shadow-lg;
+  }
+  .page-hero-subtitle {
+    @apply text-white/80 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed;
+  }
+  .breadcrumb {
+    @apply flex items-center justify-center gap-2 text-sm text-white/70 mb-6;
+  }
+  .breadcrumb a {
+    @apply hover:text-white transition-colors duration-200;
+  }
+}
+
+/* ── Hero slider (home page only) ──────────────────────── */
+.hero-slide {
+  @apply absolute inset-0 transition-opacity duration-700 ease-in-out;
+}
+.hero-slide.active {
+  @apply opacity-100 z-10;
+}
+.hero-slide:not(.active) {
+  @apply opacity-0 z-0;
+}
+
+/* ── Scrollbar styling ─────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: #F4F8FA;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #5FA8C7;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #01506E;
+}
